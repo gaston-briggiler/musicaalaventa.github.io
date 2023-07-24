@@ -1,0 +1,106 @@
+/* Estilos generales */
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .conteiner-general {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; 
+  }
+
+/* Header */
+.conteiner-header-index {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  .navbar {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+  }
+  
+  .menu ul {
+    display: flex; 
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    margin-right: 10px; 
+  }
+  
+  .boton {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  
+  /* Main */
+  .conteiner-main-index {
+    flex: 1; 
+    padding: 20px;
+  }
+  
+  .main-index {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  section div {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    margin: 10px 0;
+  }
+  
+  aside {
+    width: 30%;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  /* Footer */
+  .conteiner-footer-index {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  } 
+
+  .container-footer-index {
+  
+
+  }
+  
+  
+  
+  .container-footer-index a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .container-footer-index a:hover {
+    text-decoration: underline;
+  }
+  
+  .icono {
+    margin-right: 5px;
+  }
+  

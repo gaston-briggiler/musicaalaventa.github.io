@@ -116,39 +116,47 @@ var guitarras = [
 }
 
 
+let div = document.getElementById("art1") 
+console.log(art1.innerText)
+
+art1.innerText = "Guitarra Fender"
 
 
-// TUTOR, AL SIGUIENTE FRAGMENTE QUE ESTA AQUI ABAJO COMENTADO, NO LE DE IMPORTANCIA, ESTOY TRATANDO DE LOGRAR ALGO ...
-//  ...QUE AUN NO LO LOGRE, PERO ESTOY TRATANDO DE HACERLO SIN NINGUN TIPO DE AYUDA, POR ESO VA DE A POCO Y CON ALGUNOS ERRORES.
 
-//MUCHAS GRACIAS
+console.log(art1.innerText)
 
-//Mostrar las guitarras en Stock
+let boton = document.getElementById("btnMain")
+boton.onclick = () => {console.log("click")}
+boton.onmousemove = () => {console.log("move")}
 
-// let guitStock = prompt('en este momento tenemos en stock guitarras Fender, Ibanez, Gibson y Epiphone. coloque 0 para info de fender, 1 para info de ibanez, 2 para info de gibson y 3 para info de eiphone ');
 
-// function guitarrasInfo(numero) {
-//   if (numero === 0 ) {
-//     alert(' guitarras[0]');
-//   } 
-  
-//   if (numero === 1 ) {
-//     alert(' guitarras[1]');
-//   } 
 
-//   if (numero === 2 ) {
-//     alert(' guitarras[2]');
-//   }  
 
-//   if (numero === 3 ) {
-//     alert(' guitarras[3]');
-//   } 
-//   else {
-//     alert(' por favor coloque 0, 1, 2 o 3');
-//   }
-// }
+// Guardar los datos en el Storage en formato JSON.
+function guardarGuitarrasEnStorage(clave, guitarras) {
+  const guitarrasJSON = JSON.stringify(guitarras);
+  localStorage.setItem(clave, guitarrasJSON);
+}
 
-// console.log(guitarrasInfo(pareseInt(guitStock)));
+// Obtener los datos almacenados en el Storage y convertirlos a un array.
 
-//Colocar 0 para informacion de guitarra Fender, 1 para informacion de guitarra ibanez, 2 para 
-//informacion de guitarra Gibson, y 3 para informacion de guitarra epiphone 
+function obtenerGuitarrasDesdeStorage(clave) {
+  const guitarrasJSON = localStorage.getItem(clave);
+  if (guitarrasJSON) {
+    return JSON.parse(guitarrasJSON);
+  } else {
+    return null; // Si no hay datos almacenados, devolvemos null o un valor predeterminado.
+  }
+}
+
+
+//Función para guardar los datos en el Storage con una clave.
+guardarGuitarrasEnStorage('miArrayDeObjetos', guitarras);
+
+// Función para obtener los datos almacenados en el Storage con la misma clave
+const datosRecuperados = obtenerGuitarrasDesdeStorage('miArrayDeObjetos');
+
+// Mostrar los datos recuperados por consola
+console.log(datosRecuperados);
+
+
