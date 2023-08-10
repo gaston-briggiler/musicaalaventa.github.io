@@ -12,7 +12,7 @@ function verificarEdad(numero) {
 }
 
 verificarEdad(parseInt(edad));
-  
+
   
 
 
@@ -63,28 +63,28 @@ console.log(calcularValorProducto(3500))
 
 var guitarras = [
   {
-    nombre: "Fender",
+    nombre: "Epiphone",
     modelo: "Stratocaster",
     precio: 4000,
     color: "rojo",
     año: 1998
   },
   {
-    nombre: "Ibanez",
-    modelo: "RG",
-    precio: 1400,
-    color: "negra",
-    año: 2010
+      nombre: "Fender",
+      modelo: "RG",
+      precio: 1400,
+      color: "negra",
+      año: 2010
   },
   {
-    nombre: "Gibson",
+    nombre: "Ibanez",
     modelo: "Les Paul",
     precio: 4200,
     color: "blanca",
     año: 1988
   },
   {
-    nombre: "Epiphone",
+    nombre: "Gibson",
     modelo: "DOT 335",
     precio: 2000,
     color: "negra",
@@ -116,18 +116,13 @@ var guitarras = [
 }
 
 
-let div = document.getElementById("art1") 
-console.log(art1.innerText)
+let div = document.getElementById("art1");
+console.log(div.innerText);
 
-art1.innerText = "Guitarra Fender"
+div.innerText = "Guitarra Fender";
 
 
 
-console.log(art1.innerText)
-
-let boton = document.getElementById("btnMain")
-boton.onclick = () => {console.log("click")}
-boton.onmousemove = () => {console.log("move")}
 
 
 
@@ -158,5 +153,114 @@ const datosRecuperados = obtenerGuitarrasDesdeStorage('miArrayDeObjetos');
 
 // Mostrar los datos recuperados por consola
 console.log(datosRecuperados);
+
+
+
+
+
+// Arreglo para almacenar los artículos agregados al carrito
+let carrito = [];
+
+// Función para agregar una guitarra al carrito
+function agregarAlCarrito(guitarra) {
+    carrito.push(guitarra);
+    actualizarCarrito();
+}
+
+// Función para eliminar una guitarra del carrito
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+// Función para actualizar el carrito en el DOM
+function actualizarCarrito() {
+    const carritoItemsElement = document.getElementById('carrito-items');
+    carritoItemsElement.innerHTML = '';
+
+    if (carrito.length === 0) {
+        document.getElementById('carrito-vacio').style.display = 'block';
+    } else {
+        document.getElementById('carrito-vacio').style.display = 'none';
+
+        carrito.forEach((guitarra, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'carrito-item';
+
+            const nombreP = document.createElement('p');
+            nombreP.textContent = guitarra.nombre;
+            itemDiv.appendChild(nombreP);
+
+            const eliminarBtn = document.createElement('button');
+            eliminarBtn.className = 'btn btn-danger';
+            eliminarBtn.textContent = 'Eliminar';
+            eliminarBtn.onclick = () => eliminarDelCarrito(index);
+            itemDiv.appendChild(eliminarBtn);
+
+            carritoItemsElement.appendChild(itemDiv);
+        });
+    }
+}
+
+// Evento click para agregar al carrito
+
+
+document.querySelectorAll('.agregar-carrito-btn').forEach((btn, index) => {
+    btn.onclick = () => agregarAlCarrito(guitarras[index]);
+});
+
+
+// Evento click para  ver mas productos 
+
+document.getElementById('ver-mas').onclick = () => {
+  carrito = [];
+  actualizarCarrito();
+  alert('Muestra mas productos')
+};
+
+
+// Evento click para vaciar el carrito
+document.getElementById('vaciar-carrito').onclick = () => {
+  if (carrito.length === 0) {
+      alert('El carrito está vacío');
+  } else {
+      carrito = [];
+      actualizarCarrito();
+      alert('Se eliminarán los productos del carrito');
+  }
+};
+
+
+
+
+
+
+
+
+
+
+// EJEMPLO DE FUNCION PARA CARRITO
+
+newFunction() 
+  
+
+
+function newFunction() {
+  let carrito = []
+
+  if (carrito.length === 0) {
+
+    console.log('el carrito esta vacio')
+  }
+
+  let usuario = {
+    nombre: 'Gaston Briggiler',
+    edad: 34
+  }
+
+  const registroIngreso = usuario.edad > 18 && new Date()
+
+  console.log(registroIngreso)
+}
 
 

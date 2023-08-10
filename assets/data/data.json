@@ -1,0 +1,39 @@
+[
+    {
+        "id":1,
+        "nombre": "Guitarra Fender",
+        "precio": 3000,
+        "categoria": "guitarras",
+        "stock": 2,
+        "imgUrl": "../assets/imagenes/strato roja~2.jpg"
+    },
+
+    {
+        "id":2,
+        "nombre": "Guitarra Gibson",
+        "precio": 3500,
+        "categoria": "guitarras",
+        "stock": 1,
+        "imgUrl": "../assets/imagenes/gibson(4).png"
+    },
+
+    {
+        "id":3,
+        "nombre": "Guitarra epiphone",
+        "precio": 2500,
+        "categoria": "guitarras",
+        "stock": 3,
+        "imgUrl": "../assets/imagenes/dotroja27.jpg"
+    },
+    
+    {
+        "id":4,
+        "nombre": "Guitarra ibanez",
+        "precio": 2000,
+        "categoria": "guitarras",
+        "stock": 4,
+        "imgUrl": "../assets/imagenes/iba4.jpg"    
+    }
+
+
+]

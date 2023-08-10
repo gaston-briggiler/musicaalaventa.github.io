@@ -3,10 +3,12 @@ html, body {
     height: 100%; 
     margin: 0;
     padding: 0;
+  
   }
   
   
   .conteiner-general {
+    background-color: #3333332c ;
     display: flex;
     flex-direction: column;
     min-height: 100%; 
@@ -14,10 +16,14 @@ html, body {
 
 /* Header */
 .conteiner-header-index {
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 76, 0.881);
     padding: 10px;
   }
   
+   .logo{
+    margin-left: 30px;
+  }
+
   .navbar {
     display: flex; 
     align-items: center; 
@@ -49,13 +55,43 @@ html, body {
   }
   
   .main-index {
-    display: flex;
+    display: flex;  
     justify-content: space-between;
   }
   
-  section {
+  
+  .grid-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto; 
+    margin-left: 100px; 
+  }
+      
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    background-color:rgba(255, 255, 76, 0.324);
+    border: 3px solid #302f2f;
+    height: 100%;
+    box-sizing: border-box; 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 15px 15px 5px rgba(0, 0, 0, 0.1);
+     
+  }
+  
+
+  .grid-card {
+    width: 18rem;
   }
   
   section div {
@@ -65,11 +101,38 @@ html, body {
   h3 {
     margin: 10px 0;
   }
+
   
+
   aside {
+    border-radius: 20px;
+    border: 2px solid black;
     width: 30%;
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 76, 0.21);
     padding: 10px;
+  }
+
+  aside h2 {
+    margin-left: 30px;
+
+  }
+
+
+  aside ul li {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .carrito-section {
+    text-align: center; 
+    padding: 20px;
+  }
+
+  div .botonera {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   
   /* Footer */
@@ -78,17 +141,11 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #333;
+    background-color:rgba(57, 66, 70, 0.336);
     color: #fff;
     padding: 10px;
   } 
 
-  .container-footer-index {
-  
-
-  }
-  
-  
   
   .container-footer-index a {
     color: #fff;
@@ -102,5 +159,7 @@ html, body {
   
   .icono {
     margin-right: 5px;
-  }
+  } 
+  
+
   
